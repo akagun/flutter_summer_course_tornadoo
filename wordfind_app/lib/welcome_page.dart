@@ -31,10 +31,9 @@ class WelcomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25))),
           child: Text("PLAY",
               style: TextStyle(
-                fontFamily: "Nunito",
-                fontWeight: FontWeight.w700,
-                fontSize:
-              )),
+                  fontFamily: "Nunito",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24)),
         ),
       ),
       body: Container(
@@ -58,6 +57,7 @@ class WelcomePage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
