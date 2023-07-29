@@ -14,6 +14,9 @@ class WelcomePage extends StatelessWidget {
         width: 310,
         height: 60,
         decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/back1.png'),
+          fit: BoxFit.cover),
             gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
@@ -37,6 +40,10 @@ class WelcomePage extends StatelessWidget {
         ),
       ),
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/back1.png'),
+          fit: BoxFit.cover),
+        ),
         child: Container(
           child: Center(
             child: Column(
