@@ -11,12 +11,12 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFFBF5F2),
       floatingActionButton: Container(
+        margin: EdgeInsets.only(bottom: 190),
         width: 310,
         height: 60,
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/back1.png'),
-          fit: BoxFit.cover),
+            image: DecorationImage(
+                image: AssetImage('assets/back1.png'), fit: BoxFit.cover),
             gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
@@ -41,27 +41,35 @@ class WelcomePage extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/back1.png'),
-          fit: BoxFit.cover),
+          image: DecorationImage(
+              image: AssetImage('assets/back1.png'), fit: BoxFit.cover),
         ),
-        child: Container(
-          child: Center(
-            child: Column(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Padding(padding: EdgeInsets.only(top: 200)),
+            Expanded(
+                child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GradientLetter('W'),
+                    Padding(padding: EdgeInsets.all(7)),
                     GradientLetter('O'),
+                    Padding(padding: EdgeInsets.all(7)),
                     GradientLetter('R'),
+                    Padding(padding: EdgeInsets.all(7)),
                     GradientLetter('D')
                   ],
                 ),
                 GradiantText("Game", 31.6),
-                Expanded(child: GradiantText("READY?", 25.0)),
+                Padding(padding: EdgeInsets.all(1)),
+                Expanded(child: Image.asset('assets/iCodeGuy.png')),
               ],
-            ),
-          ),
+            )),
+            Expanded(child: GradiantText("READY?", 25.0)),
+          ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
