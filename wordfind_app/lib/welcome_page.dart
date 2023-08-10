@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/gradiant_letter.dart';
+import 'package:wordfind_app/start_page.dart';
 
 import 'gradiant_text.dart';
 
@@ -26,7 +27,9 @@ class WelcomePage extends StatelessWidget {
                 ]),
             borderRadius: BorderRadius.circular(25)),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push( context, MaterialPageRoute(builder: (context) => const StartPage()));
+          },
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
               elevation: 0,

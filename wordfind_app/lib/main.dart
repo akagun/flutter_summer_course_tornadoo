@@ -6,6 +6,6 @@ void main() {
   runApp(MaterialApp(
     title: "word find game",
     theme: ThemeData(fontFamily: "Ribeye"),
-    home: TaskPage(),
+    home: WelcomePage(),
   ));
 }

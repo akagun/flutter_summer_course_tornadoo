@@ -1,34 +1,39 @@
 
-import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:wordfind_app/models/char_model.dart';
 
 class TaskModel {
+  TaskModel ({
+    required this.pathImage,
+    required this.question,
+    required this.answer,
+    this.arrayButtons = const [],
+  });
+
   String question;
   String pathImage;
   String answer;
   bool isDone = false;
   bool isFull = false;
-  List<CharModel> puzzles = [],
-  List<String> arrayButtons = [],
+  List<CharModel> puzzles = [];
+  List<String> arrayButtons = [];
 
-  TaskModel (
-  required this.pathImage;
-  required this.question;
-  required this.answer;
-  this.arrayButtons = const [];
-      )
-  setWordFindChar() {
-    CharModel(
-    this.puzzles = puzzles;
-    )
+
+   setWordFindChar(List<CharModel> puzzles) {
+     this.puzzles = puzzles;
   }
   setIsDone() {
     isDone = true;
   }
   fielCompleteCorrect () {
-    return bool;
-    bool complete = puzzles.where((puzzles) => puzzle.currentValue == null).isEmpty
+    bool complete = puzzles.where((puzzle) => puzzle.currentValue == null).isEmpty;
+    if (!complete) isFull = false;
+    String answeredString = puzzles.map((puzzle) => puzzle.currentValue).join("");
+    answeredString == answer;
+    return answeredString;
+  }
+  TaskModel Clone () {
+     return TaskModel(pathImage: pathImage, question: question, answer: answer);
   }
 }
