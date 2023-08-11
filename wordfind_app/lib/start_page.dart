@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/gradiant_text.dart';
@@ -17,7 +19,8 @@ class StartPage extends StatefulWidget {
 
 class _StartPageState extends State<StartPage> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+
     return Scaffold(
       backgroundColor: Color(0xFFFBFF5F2),
       appBar: AppBar(
@@ -68,7 +71,6 @@ class _StartPageState extends State<StartPage> {
       newUser.userName = userName;
     });
   }
-}
 
 class StartButton extends StatelessWidget {
   const StartButton(User newUser,
