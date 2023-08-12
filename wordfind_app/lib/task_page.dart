@@ -1,9 +1,30 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/models/user_model.dart';
+import 'package:wordfind_app/task_widget.dart';
 
-class TaskPage extends StatelessWidget {
-  const TaskPage({super.key});
+import 'data/questions.dart';
+import 'models/task_model.dart';
+
+class TaskPage extends StatefulWidget {
+  final User user;
+  const TaskPage(this.user, {super.key});
+
+  @override
+  State<TaskPage> createState() => _TaskPageState();
+}
+
+class _TaskPageState extends State<TaskPage> {
+  late List<TaskModel> listQuestions;
+  GlobalKey<TaskWidgetState> globalKey = GlobalKey();
+
+  late User user;
+
+  @override
+  void initState() {
+    super.initState();
+    listQuestions = questions;
+    user = widget.user;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +32,15 @@ class TaskPage extends StatelessWidget {
         backgroundColor: Color(0xFFFBF5F2),
         appBar: AppBar(
           leading: IconButton(
-              icon: Image.asset('assets/arrow_back.png'), onPressed: () {}),
+              icon: Image.asset('assets/arrow_back.png'),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
           title: Text(
-            'Gun',
+            user.userName,
             style: TextStyle(fontSize: 24, color: Color(0xFFE86B02)),
           ),
         ),
@@ -28,7 +52,17 @@ class TaskPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Expanded(child: Container()),
+                Expanded(child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return TaskWidget(
+                      constraints.biggest,
+                      listQuestions
+                          .map((question) => question.clone())
+                          .toList(),
+                      key: globalKey,
+                    );
+                  },
+                )),
                 Container(
                   width: double.maxFinite,
                   padding: EdgeInsets.only(bottom: 10),
@@ -47,7 +81,13 @@ class TaskPage extends StatelessWidget {
                           ),
                           borderRadius: BorderRadius.circular(10)),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          globalKey.currentState?.generatePuzzle(
+                            loop: listQuestions
+                                .map((question) => question.clone())
+                                .toList(),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             elevation: 0,

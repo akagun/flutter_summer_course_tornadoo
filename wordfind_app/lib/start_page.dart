@@ -1,6 +1,3 @@
-import 'dart:html';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/gradiant_text.dart';
 import 'package:wordfind_app/input_field.dart';
@@ -19,8 +16,7 @@ class StartPage extends StatefulWidget {
 
 class _StartPageState extends State<StartPage> {
   @override
-  Widget build(BuildContext context)
-
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFBFF5F2),
       appBar: AppBar(
@@ -39,23 +35,25 @@ class _StartPageState extends State<StartPage> {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/back2.png'), fit: BoxFit.cover),
         ),
         child: Center(
           child: Column(
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(50),
               ),
               Image.asset('assets/iCodeGuyHead.png'),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 20),
               ),
-              GradiantText('Player Name', 20.0),
-              InputField(onSubmitted: _createUser,),
-              Padding(
+              const GradiantText('Player Name', 20.0),
+              InputField(
+                onSubmitted: _createUser,
+              ),
+              const Padding(
                 padding: EdgeInsets.only(top: 20),
               ),
             ],
@@ -66,26 +64,28 @@ class _StartPageState extends State<StartPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
-  _createUser (String userName){
+
+  _createUser(String userName) {
     setState(() {
       newUser.userName = userName;
     });
   }
+}
 
 class StartButton extends StatelessWidget {
-  const StartButton(User newUser,
-      {super.key});
+  const StartButton(User newUser, {super.key});
 
   @override
   Widget build(BuildContext context) {
+
     if (newUser.userName == "Guest") {
       return Container();
-    }else {
+    } else {
       return Container(
         width: 310,
         height: 60,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [Color(0xFFE86B02), Color(0xFFEA9541)],
@@ -93,7 +93,8 @@ class StartButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(25)),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push( context, MaterialPageRoute(builder: (context) => const TaskPage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => TaskPage(newUser)));
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
@@ -102,16 +103,15 @@ class StartButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(25),
             ),
           ),
-          child: Text(
+          child: const Text(
             'START',
             style: TextStyle(
-                fontFamily: 'Nunito', fontSize: 24, fontWeight: FontWeight.w700),
+                fontFamily: 'Nunito',
+                fontSize: 24,
+                fontWeight: FontWeight.w700),
           ),
         ),
       );
     }
-
-
   }
 }
-
