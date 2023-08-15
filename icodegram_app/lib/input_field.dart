@@ -13,33 +13,22 @@ class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 310,
-      height: 50,
+      width: 343,
+      height: 45,
       child: TextField(
         maxLines: 1,
         style: TextStyle(
-            color: Color(0xFFE86B02),
             fontSize: 18,
-            fontFamily: 'Nunito',
             fontWeight: FontWeight.w600),
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 25,
-              vertical: 12,
-            ),
-            filled: true,
-            fillColor: Colors.white,
-            prefixIcon: Icon(Icons.person, color: Color(0xFFE86B02)),
-            hintText: "your name",
-            hintStyle: TextStyle(color: Color(0xFFE86B02)),
-            suffixIcon: IconButton(
-              onPressed: () {
-              },
-              icon: Icon(Icons.clear, color: Color(0xFFE86B02)),
-            ),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide(width: 0, style: BorderStyle.none))),
+
+            hintText: "${widget.hintText}",
+            hintStyle: TextStyle(color: Colors.white),
+            enabledBorder: OutlineInputBorder(
+
+                borderRadius: BorderRadius.circular(5),
+                borderSide: BorderSide(width: 1, style: BorderStyle.solid, color: Colors.grey)),
+      ),
       ),
     );
   }

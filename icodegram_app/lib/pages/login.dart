@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/input_field.dart';
 
@@ -15,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -25,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.white,
                     fontFamily: "Lobster")),
             InputField(hintText: "Username"),
+            Padding(padding: EdgeInsets.all(5)),
             InputField(hintText: "Password"),
           ],
         ),

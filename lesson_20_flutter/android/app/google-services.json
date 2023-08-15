@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296279172825",
+    "project_id": "lesson-20-gun",
+    "storage_bucket": "lesson-20-gun.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296279172825:android:e8e10593a7210f1dd0c0c8",
+        "android_client_info": {
+          "package_name": "com.example.lesson_20_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296279172825-fjau8tlp4bbm5i37e5buvltahkifjh0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbUqci2QDQ9FOf-F8dqRk6FEBDr33wYfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296279172825-fjau8tlp4bbm5i37e5buvltahkifjh0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
