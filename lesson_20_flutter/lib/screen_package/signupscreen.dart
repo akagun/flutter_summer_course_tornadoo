@@ -65,11 +65,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             SizedBox(height: 24),
             InkWell(
-              onTap: () {
+              onTap: () => {
                 AuthMethods().signUpUser(
                     email: _emailController.text,
                     password: _passwordController.text,
-                    username: _userNameController.text);
+                    username: _userNameController.text)
               },
               child: Container(
                 width: double.infinity,

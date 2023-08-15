@@ -15,6 +15,7 @@ class TextFieldInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: editingController,
       decoration: InputDecoration(
         hintText: this.hintText,
         border: OutlineInputBorder(
