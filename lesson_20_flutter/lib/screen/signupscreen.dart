@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:lesson_20_flutter/components/text_input_field.dart';
 import 'package:lesson_20_flutter/resources/auth_methods.dart';
@@ -17,6 +15,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _validatePasswordController =
       TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
