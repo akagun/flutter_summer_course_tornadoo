@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Padding(padding: EdgeInsets.only(top: 52, left: 176, right: 176)),
             TextFieldInput(
-                hintText: 'userName',
+                hintText: 'Нэвтрэх нэр',
                 isPassword: false,
                 editingController: _emailController,
                 textInputType: TextInputType.emailAddress),
@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 24,
             ),
             TextFieldInput(
-                hintText: 'userPassword',
+                hintText: 'Нууц үг',
                 isPassword: true,
                 editingController: _passwordController,
                 textInputType: TextInputType.text),
@@ -74,12 +74,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       gradient: const LinearGradient(
                           colors: [Color(0xFFE86B02), Color(0xFFFA9541)])),
                   child: Center(
-                    child: Text('LogIn'),
+                    child: Text('Нэвтрэх'),
                   ),
                 )),
             SizedBox(
               height: 12,
             ),
+            Text('Эсвэл', style: TextStyle(color: Colors.grey)),
+            Text('Шинэ хэрэглэгч үү?', style: TextStyle(color: Colors.grey)),
             Flexible(flex: 2, child: Container()),
           ],
         ),
