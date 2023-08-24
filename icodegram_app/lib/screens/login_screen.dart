@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/components/text_input_field.dart';
+import 'package:icodegram_app/pages/home_screen.dart';
+import 'package:icodegram_app/pages/sign_up.dart';
 
 import '../recourse/auth_methods.dart';
 
@@ -18,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
     String result = await AuthMethods().loginUser(
         email: _emailController.text, password: _passwordController.text);
     if (result == 'success') {
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
       print('Logged in');
     } else {
       result = 'not logged in';
@@ -81,7 +84,18 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 12,
             ),
             Text('Эсвэл', style: TextStyle(color: Colors.grey)),
-            Text('Шинэ хэрэглэгч үү?', style: TextStyle(color: Colors.grey)),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+             children: [
+               Text('Шинэ хэрэглэгч үү?', style: TextStyle(color: Colors.grey)),
+               InkWell(
+                 onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUp()));
+                 },
+                 child:  Text('Бүртгүүлэх', style: TextStyle(color: Colors.orange),),
+               ),
+             ],
+           ),
             Flexible(flex: 2, child: Container()),
           ],
         ),

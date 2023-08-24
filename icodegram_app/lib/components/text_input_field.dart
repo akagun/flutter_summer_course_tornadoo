@@ -19,7 +19,7 @@ class TextFieldInput extends StatelessWidget {
     return TextField(
       controller: editingController,
       decoration: InputDecoration(
-        hintText: this.hintText,
+        hintText: hintText,
         border: OutlineInputBorder(
           borderSide: Divider.createBorderSide(context),
         ),
@@ -30,7 +30,7 @@ class TextFieldInput extends StatelessWidget {
         ),
         filled: true,
       ),
-      obscureText: this.isPassword,
+      obscureText: isPassword,
       keyboardType: textInputType,
     );
   }
