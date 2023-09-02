@@ -25,7 +25,8 @@ class _WatchStoryState extends State<WatchStory> {
               onPressed: () {},
               child: CircleAvatar(
                 backgroundImage: AssetImage(
-                  "assets/profile.png"
+                  "assets/profile.png",
+
                 ),
                 minRadius: 150,
                 maxRadius: 300,

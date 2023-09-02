@@ -38,8 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Image.asset(
           "assets/photo.png",
-          width: 375,
-          height: 375,
+          width: 500,
+          fit: BoxFit.fitWidth,
         )
       ],
     ),
@@ -82,8 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Image.asset(
               "assets/profile_pic.png",
-              width: 35,
-              height: 35,
+              width: 60,
+              height: 60,
             ),
             Text("Сарнай",
                 style: TextStyle(
@@ -94,11 +94,74 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Image.asset(
           "assets/postpic.png",
-          width: 375,
-          height: 375,
+          width: 500,
+          fit: BoxFit.fitWidth,
         )
       ],
     ),
+    Column(
+      children: [
+        Row(
+          children: [
+            Row(
+              children: [
+                Column(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/Like.svg",
+                      width: 20.90311622619629,
+                      height: 18.23182487487793,
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+              Text(
+                "joshua_l",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Text(
+                "Have a nice day",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              )
+            ]),
+          ],
+        )
+      ],
+    ),
+    Column(
+      children: [
+        Row(
+          children: [
+            Image.asset(
+              "assets/profile.png",
+              width: 35,
+              height: 35,
+            ),
+            Text("Төгөлдөр",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ))
+          ],
+        ),
+        Image.asset(
+          "assets/photo.png",
+          width: 500,
+          fit: BoxFit.fitWidth,
+        )
+      ],
+    ),
+    
   ];
 
   @override
